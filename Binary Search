@@ -1,0 +1,32 @@
+//code for Binary search.
+#include <iostream>
+using namespace std;
+
+int binarysearch(int arr[],int low,int high,int x){
+    while(low<=high){
+        int mid=(low+high)/2;
+        if(arr[mid]==x){
+            return mid;
+        }
+        if(arr[mid]<x){
+            low=mid+1;
+        }
+        else{
+            high=mid-1;
+        }
+    }
+    return -1;
+}
+
+int main() {
+ int arr[7]={2,4,6,7,8,9,12};
+ int x=8,low=0,high=sizeof(arr)-1;
+ int res=binarysearch(arr,low,high,x);
+ if(res!=-1){
+ cout<<"The given number is found at ";
+ cout<<res;}
+ else{
+     cout<<"The number not found";
+ }
+    return 0;
+}
